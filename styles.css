@@ -58,6 +58,7 @@ p {
   height: 100%;
   transition: 0.5s;
 }
+
 .header:hover::before {
   left: 100%;
 }
@@ -66,7 +67,7 @@ p {
   color: #fff;
   font-size: 25px;
   text-decoration: none;
-  font: weight 600px;;
+  font-weight: 600;
   cursor: default;
   position: absolute;
 }
@@ -90,6 +91,36 @@ p {
   color: #3498db;
   background-color: #000000;
 }
+
+/* Responsive Header Styles */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 50px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .navbar a {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 20px 20px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .navbar a {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+}
+
+/* Home Section Styles */
 
 #home {
   padding: 100px;
@@ -126,6 +157,32 @@ p {
 
 #home button:hover {
   background-color: #000000;
+}
+
+/* Responsive Home Section Styles */
+
+@media (max-width: 768px) {
+  #home {
+    padding: 50px;
+  }
+  #home h1 {
+    font-size: 40px;
+  }
+  #home p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #home {
+    padding: 20px;
+  }
+  #home h1 {
+    font-size: 30px;
+  }
+  #home p {
+    font-size: 16px;
+  }
 }
 
 /* About Section Styles */
@@ -165,6 +222,32 @@ p {
   background-color: #000000;
 }
 
+/* Responsive About Section Styles */
+
+@media (max-width: 768px) {
+  #about {
+    padding: 50px;
+  }
+ .about h2 {
+    font-size: 30px;
+  }
+ .about p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+    padding: 20px;
+  }
+ .about h2 {
+    font-size: 24px;
+  }
+ .about p {
+    font-size: 14px;
+  }
+}
+
 /* Services Section Styles */
 
 #services {
@@ -172,8 +255,7 @@ p {
   background-color: #ffffff;
   text-align: center;
   font-size: 24px;
- background-image: url(59272.jpg) ;
- 
+  background-image: url(59272.jpg);
 }
 
 .service-grid {
@@ -221,6 +303,32 @@ p {
   grid-gap: 20px;
 }
 
+/* Responsive Services Section Styles */
+
+@media (max-width: 768px) {
+  #services {
+    padding: 50px;
+  }
+ .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ .service {
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  #services {
+    padding: 20px;
+  }
+ .service-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+ .service {
+    flex-basis: 100%;
+  }
+}
+
 /* Course Catalog Section Styles */
 
 #courses {
@@ -228,7 +336,6 @@ p {
   padding: 20px;
   text-align: center;
   font-size: 24px;
-
 }
 
 .course-grid {
@@ -312,7 +419,7 @@ button:hover {
   margin-bottom: 20px;
 }
 
-/* Responsive Styles */
+/* Responsive Course Catalog Section Styles */
 
 @media (max-width: 768px) {
   .course-grid {
@@ -337,7 +444,6 @@ button:hover {
     padding: 5px;
   }
 }
-
 
 /* Toppers Section */
 
@@ -387,10 +493,10 @@ button:hover {
   margin-bottom: 20px;
 }
 
-/* Media queries for responsiveness */
+/* Responsive Toppers Section Styles */
 
 @media (max-width: 768px) {
- .topper-grid {
+  .topper-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -402,98 +508,100 @@ button:hover {
 }
 
 .topper {
-  margin-bottom: 20px;
+  margin-bottom:0px;
 }
 
-/* Contact Page Section Styles */
+/* Contact Section */
+
 #contact {
-  background-color: #1f242d;
-  padding: 20px;
-  border: 1px solid #000000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #000000;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#contact h2 {
-  font-size: 36px;
-  color: #ffffff;
-  margin-bottom: 20px;
-  animation: fadeIn 1s;
-}
-
-#contact p {
-  font-size: 18px;
-  color: #ffffff;
-  margin-bottom: 20px;
-  animation: fadeIn 1s;
-}
-
-.imput-box {
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-.imput-field {
+#contact h2 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Input Fields */
+
+.input-box {
   margin-bottom: 20px;
-  width: 100%;
-  animation: fadeIn 1s;
+  color: #ffffff;
 }
 
-.imput-field input[type="text"] {
+.input-field {
+  margin-bottom: 10px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.input-field input[type="text"] {
   width: 100%;
-  height: 50px;
   padding: 10px;
-  border: 1px solid #ccc;
+  font-size: 16px;
+  border: none;
   border-radius: 5px;
-  animation: fadeIn 1s;
+  background-color: #ffffff;
 }
+/* Message Box */
 
-.textarea-field {
-  margin-bottom: 20px;
-  width: 120%;
-  animation: fadeIn 1s;
-}
-
-.textarea-field textarea {
+.input-field textarea {
   width: 100%;
-  height: 100px;
   padding: 10px;
-  border: 1px solid #ccc;
+  font-size: 16px;
+  border: none;
   border-radius: 5px;
-  animation: fadeIn 1s;
+  background-color: #444;
+  color: #444444;
+  height: 250px; /* Make the message box bigger */
+  resize: vertical;
 }
+
+/* Button */
 
 button[type="submit"] {
-  background-color: #28a95e;
+  background-color: #4CAF50;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  animation: fadeIn 1s;
-  justify-content: center;
+  margin: 20px auto;
+  display: block;
 }
 
 button[type="submit"]:hover {
-  background-color: #444;
+  background-color: #3e8e41;
 }
 
+button[type="submit"]:active {
+  background-color: #3e8e41;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Address */
+
 address {
-  margin-top: 20px;
   font-style: normal;
+  margin-top: 20px;
+  color: #fff;
   text-align: center;
-  animation: fadeIn 1s;
 }
 
 address p {
   margin-bottom: 10px;
-}
-
-address p span {
-  font-weight: bold;
-  margin-right: 10px;
 }
 
 address a {
@@ -505,113 +613,56 @@ address a:hover {
   color: #23527c;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Responsive Styles */
-
-@media (max-width: 1200px) {
-  /* Adjust styles for large screens */
-  .header {
-    padding: 20px 50px;
-  }
-  .navbar a {
-    font-size: 18px;
-  }
-  #home {
-    padding: 50px;
-  }
-  #about {
-    padding: 50px;
-  }
-  #services {
-    padding: 50px;
-  }
-  #courses {
-    padding: 20px;
-  }
-  #contact {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 992px) {
-  /* Adjust styles for medium screens */
-  .header {
-    padding: 20px 20px;
-  }
-  .navbar a {
-    font-size: 16px;
-  }
-  #home {
-    padding: 30px;
-  }
-  #about {
-    padding: 30px;
-  }
-  #services {
-    padding: 30px;
-  }
-  #courses {
-    padding: 10px;
-  }
-  #contact {
-    padding: 10px;
-  }
-}
+/* Responsive Contact Section Styles */
 
 @media (max-width: 768px) {
-  /* Adjust styles for small screens */
-  .header {
-    padding: 10px 10px;
-  }
-  .navbar a {
-    font-size: 14px;
-  }
-  #home {
-    padding: 20px;
-  }
-  #about {
-    padding: 20px;
-  }
-  #services {
-    padding: 20px;
-  }
-  #courses {
-    padding: 5px;
-  }
   #contact {
-    padding: 5px;
+    padding: 20px;
+  }
+  .input-box {
+    margin-bottom: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  /* Adjust styles for extra small screens */
-  .header {
-    padding: 5px 5px;
-  }
-  .navbar a {
-    font-size: 12px;
-  }
-  #home {
-    padding: 10px;
-  }
-  #about {
-    padding: 10px;
-  }
-  #services {
-    padding: 10px;
-  }
-  #courses {
-    padding: 0px;
-  }
   #contact {
-    padding: 0px;
+    padding: 10px;
+  }
+  .input-box {
+    margin-bottom: 5px;
+  }
+}
+
+/* Footer Section Styles */
+
+#footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Footer Section Styles */
+
+@media (max-width: 768px) {
+  #footer {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #footer {
+    padding: 5px;
   }
 }
